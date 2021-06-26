@@ -11,9 +11,9 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - persist_to_workspace:
-          root: /home/anupam/Learning/Udacity
+          root: /tmp/workspace
           paths:
-            - Exerises/output.txt
+            - output.txt
       - run:
           name: print
           command: |
@@ -23,7 +23,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - attach_workspace:
-          at: /home/anupam/Learning/Udacity/      
+          at: /tmp/workspace      
       - run:
           name: print
           command: |
