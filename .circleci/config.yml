@@ -11,19 +11,19 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - persist_to_workspace:
-          root: /tmp
+          root: ~/
           paths:
             - output.txt
       - run:
           name: print
           command: |
-            echo "text to output here" > /tmp/output.txt
+            echo "text to output here" > output.txt
   print_hello_world_output:
     docker:
       - image: circleci/node:13.8.0
     steps:
       - attach_workspace:
-          at: /tmp   
+          at: ~/   
       - run:
           name: print
           command: |
