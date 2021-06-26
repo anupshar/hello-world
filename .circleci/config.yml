@@ -17,6 +17,7 @@ jobs:
       - run:
           name: print
           command: |
+            touch ~/output.txt
             echo "text to output here" > ~/output.txt
   print_hello_world_output:
     docker:
